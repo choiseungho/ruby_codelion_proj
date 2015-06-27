@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get 'foods/write'
 
-  get 'foods/write_complete'
+  post 'foods/write_complete'
 
   get 'foods/edit'
 
