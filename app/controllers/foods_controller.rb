@@ -38,6 +38,15 @@ class FoodsController < ApplicationController
           redirect_to :back
       end
   end
+  def write_comment_complete
+      comment = Comment.new
+      comment.post_id = params[:post_id]
+      comment.content = params[:comment_content]
+      comment.save
+      
+      flash[:alert] = "새 댓글을 달았습니다."
+      redirect_to "/foods/show/#{comment.post_id}"
+  end
 
   def edit
       @post = Post.find(params[:id])
