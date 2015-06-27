@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   root 'foods#posts'
-
-  get 'foods/posts_category'
-
+  get "/:category" => "foods#posts_category"
   get 'foods/show'
 
   get 'foods/write'
