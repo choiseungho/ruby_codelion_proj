@@ -32,7 +32,7 @@ class UsersController < ApplicationController
           flash[:alert] = "아이디 또는 비밀번호를 잘못 입력하셨습니다."
           redirect_to :back
       else
-          ssession[:user_id] = user.id
+          session[:user_id] = user.id
           flash[:alert] = "성공적으로 로그인하였습니다."
           redirect_to "/"
       end
@@ -42,5 +42,8 @@ class UsersController < ApplicationController
   end
 
   def logout_complete
+      reset_session
+      flash[:alert] = "성공적으로 로그아웃하였습니다."
+      redirect_to "/"
   end
 end
