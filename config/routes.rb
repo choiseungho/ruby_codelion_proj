@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'users/signup'
+ 
+    root 'foods#posts'
+    get 'users/signup'
 
   post 'users/signup_complete'
 
@@ -11,7 +13,7 @@ Rails.application.routes.draw do
 
   get 'users/logout_complete'
 
-  root 'foods#posts'
+  
   get '/:category' => 'foods#posts_category'
   get 'foods/show/:id' => 'foods#show'
 
